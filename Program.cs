@@ -23,7 +23,7 @@ namespace MyDotNetCoreProject
 
         private static void Foo(int value)
         {
-            Console.WriteLine(value); ;
+            Console.WriteLine(value);
         }
     }
 }
