@@ -17,7 +17,31 @@ namespace MyDotNetCoreProject
             IntPtr intPtr = (IntPtr)action;
             action = (delegate* managed<int, void>)intPtr;
             action(10);
-            Console.WriteLine("Hello World!");
+
+            Console.WriteLine("====================");
+
+            int v1 = 0b01111111_11111111_11111111_11111111;
+            Console.WriteLine(v1);
+            Console.WriteLine(BitConverter.ToString(BitConverter.GetBytes(v1)));
+            Console.WriteLine(v1 << 1);
+            Console.WriteLine(BitConverter.ToString(BitConverter.GetBytes(v1 << 1)));
+
+            Console.WriteLine("====================");
+
+            v1 = -1;    //0b11111111_11111111_11111111_11111111;
+            Console.WriteLine(v1);
+            Console.WriteLine(BitConverter.ToString(BitConverter.GetBytes(v1)));
+            Console.WriteLine(v1 << 1);
+            Console.WriteLine(BitConverter.ToString(BitConverter.GetBytes(v1 << 1)));
+
+            Console.WriteLine("====================");
+
+            v1 = -1073741825;  //0b10111111_11111111_11111111_11111111;
+            Console.WriteLine(v1);
+            Console.WriteLine(BitConverter.ToString(BitConverter.GetBytes(v1)));
+            Console.WriteLine(v1 << 1);
+            Console.WriteLine(BitConverter.ToString(BitConverter.GetBytes(v1 << 1)));
+
             Console.Read();
         }
 
