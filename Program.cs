@@ -7,15 +7,15 @@ namespace MyDotNetCoreProject
     {
         public unsafe static void Main(string[] args)
         {
-            delegate* managed<int, void> action = &Foo;
-            delegate* managed<int, void>[] actions = new delegate* managed<int, void>[1];
+            delegate* managed<int, void> action = &Foo;  //可简写为delegate*<int, void>，但delegate* unmanaged<int, void>不可简写
+            delegate*<int, void>[] actions = new delegate*<int, void>[1];
             actions[0] = action;
             for (int i = 0; i < actions.Length; i++)
             {
                 actions[i](5);
             }
             IntPtr intPtr = (IntPtr)action;
-            action = (delegate* managed<int, void>)intPtr;
+            action = (delegate*<int, void>)intPtr;
             action(10);
 
             Console.WriteLine("====================");
