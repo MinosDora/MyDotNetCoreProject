@@ -7,7 +7,8 @@ namespace MyDotNetCoreProject
     {
         public unsafe static void Main(string[] args)
         {
-            delegate* managed<int, void> action = &Foo;  //可简写为delegate*<int, void>，但delegate* unmanaged<int, void>不可简写
+            //可简写为delegate*<int, void>，但delegate* unmanaged<int, void>不可简写
+            delegate* managed<int, void> action = &Foo;
             delegate*<int, void>[] actions = new delegate*<int, void>[1];
             actions[0] = action;
             for (int i = 0; i < actions.Length; i++)
